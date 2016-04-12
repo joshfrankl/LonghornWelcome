@@ -12,7 +12,10 @@ import android.content.Intent;
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener {
 
     private Spinner spinner;
-    private String[] actions = { "Select an option", "Introduction Video", "Play Texas Fight", "Key Buildings", "Places to Eat"};
+    private String[] actions = { "Select an option", "Introduction Video", "Play Texas Fight", "Perry-Castañeda Library", "Flawn Academic Center", "Darrell K. Royal-Texas Memorial Stadium", "Places to Eat"};
+    private final String pclDescription = "The Perry-Castañeda Library (PCL) is The University of Texas at Austin's main research library.  It embraces all subject fields, with the strongest holdings in the humanities, social sciences, business, and education.  Open to everyone, we welcome your visit!";
+    private final String facDescription = "The Peter T. Flawn Academic Center (formerly the Undergraduate Library and Academic Center) is an undergraduate library and \"technology and collaboration\" facility located on The University of Texas at Austin campus. The center, named after former university president Peter T. Flawn in 1983, opened between 1963 and 1964. Upon its opening, the building featured the first open-stack library on campus for undergraduates along with much of the Humanities Research Center.";
+    private final String dkrDescription = "Darrell K. Royal–Texas Memorial Stadium (formerly War Memorial Stadium, Memorial Stadium, and Texas Memorial Stadium), located in Austin, Texas, has been home to the University of Texas at Austin Longhorns football team since 1924. The stadium has delivered a great home field advantage with the team's home record through the 2015 season being 362–108–10 (76.5%). The current official stadium seating capacity of 100,119 makes the stadium the second largest stadium in the state of Texas, the largest in the Big 12 Conference, the ninth largest stadium in the United States, and the twelfth largest stadium in the world.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +44,27 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             spinner.setSelection(0); // Reset the spinner for future use
             startActivity(intent);
         }
-        /*else if (position == 3) { // Key Buildings
+        else if (position == 3) { // PCL
             Intent intent = new Intent(this, KeyBuildingsActivity.class);
             spinner.setSelection(0); // Reset the spinner for future use
+            intent.putExtra("title", "Perry-Castañeda Library (PCL)");
+            intent.putExtra("description", pclDescription);
             startActivity(intent);
         }
-        else if (position == 4) { // Places to Eat
+        else if (position == 4) { // FAC
+            Intent intent = new Intent(this, KeyBuildingsActivity.class);
+            spinner.setSelection(0); // Reset the spinner for future use
+            intent.putExtra("title", "Flawn Academic Center (FAC)");
+            intent.putExtra("description", facDescription);
+            startActivity(intent);
+        } else if (position == 5) { // DKR
+            Intent intent = new Intent(this, KeyBuildingsActivity.class);
+            spinner.setSelection(0); // Reset the spinner for future use
+            intent.putExtra("title", "Darrell K. Royal-Texas Memorial Stadium (DKR)");
+            intent.putExtra("description", dkrDescription);
+            startActivity(intent);
+        }
+        /*else if (position == 6) { // Places to Eat
             Intent intent = new Intent(this, PlacesToEatActivity.class);
             spinner.setSelection(0); // Reset the spinner for future use
             startActivity(intent);
