@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FightSongActivity" />
+        <activity android:name=".VideoActivity" />
         <activity android:name=".KeyBuildingsActivity"></activity>
     </application>
 

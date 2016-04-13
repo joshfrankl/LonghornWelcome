@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         spinner.setSelection(position);
         String selAction = (String) spinner.getSelectedItem();
 
-        /*if (position == 1) { // Introduction Video
+        if (position == 1) { // Introduction Video
             Intent intent = new Intent(this, VideoActivity.class);
             spinner.setSelection(0); // Reset the spinner for future use
             startActivity(intent);
-        }*/
+        }
         if (position == 2) { // Play Texas Fight
             Intent intent = new Intent(this, FightSongActivity.class);
             spinner.setSelection(0); // Reset the spinner for future use
