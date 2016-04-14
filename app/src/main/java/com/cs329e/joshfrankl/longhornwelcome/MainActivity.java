@@ -64,11 +64,11 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             intent.putExtra("description", dkrDescription);
             startActivity(intent);
         }
-        /*else if (position == 6) { // Places to Eat
-            Intent intent = new Intent(this, PlacesToEatActivity.class);
+        else if (position == 6) { // Places to Eat
+            Intent intent = new Intent(this, MapsActivity.class);
             spinner.setSelection(0); // Reset the spinner for future use
             startActivity(intent);
-        }*/
+        }
     }
 
     @Override
