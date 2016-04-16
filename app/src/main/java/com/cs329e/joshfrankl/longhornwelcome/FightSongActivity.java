@@ -76,14 +76,17 @@ public class FightSongActivity extends AppCompatActivity {
     }
 
     public void pause(View view) {
-        mySound.pause();
-        paused=mySound.getCurrentPosition();
+        if(mySound != null && mySound.isPlaying()) { // Only pause playback if song is actually playing
+            mySound.pause();
+            paused = mySound.getCurrentPosition();
+        }
     }
 
     public void stop(View view) {
-        mySound.release();
-        mySound=null;
-
+        if(mySound != null) { // Only stop playback if song is actually playing
+            mySound.release();
+            mySound = null;
+        }
     }
 
     public void play(View view) {
@@ -98,8 +101,10 @@ public class FightSongActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        mySound.release();
-        mySound = null;
+        if(mySound != null) { // Only stop playback if song is actually playing
+            mySound.release();
+            mySound = null;
+        }
         this.finish();
 
         super.onBackPressed();

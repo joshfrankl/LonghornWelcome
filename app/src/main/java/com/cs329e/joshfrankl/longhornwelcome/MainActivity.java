@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             spinner.setSelection(0); // Reset the spinner for future use
             startActivity(intent);
         }
-        if (position == 2) { // Play Texas Fight
+        else if (position == 2) { // Play Texas Fight
             Intent intent = new Intent(this, FightSongActivity.class);
             spinner.setSelection(0); // Reset the spinner for future use
             startActivity(intent);
